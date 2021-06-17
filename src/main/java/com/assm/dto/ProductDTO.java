@@ -14,24 +14,43 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductDTO {
-	//@NotNull
+	// @NotNull
 	private Integer id;
-	
-	@NotNull(message="Thiếu name")
+
+	@NotNull(message = "Thiếu name")
 	private String name;
-	
-	@NotNull(message="Thiếu giá")
+
+	@NotNull(message = "Thiếu giá")
 	private Integer price;
-	
+
 	private String createdate;
-	
-	@NotNull(message="Thiếu Trajgn thái")
+
+	@NotNull(message = "Thiếu Trajgn thái")
 	private Integer available;
-	
-	//@NotNull
+
+	// @NotNull
 	private String image;
-	
-	@NotNull(message="Thiếu id Categories")
+
+	private Integer quantity;
+
+	@NotNull(message = "Thiếu id Categories")
 	private Categories categorie;
+
+	public ProductDTO(Integer id, @NotNull(message = "Thiếu name") String name,
+			@NotNull(message = "Thiếu giá") Integer price, String createdate,
+			@NotNull(message = "Thiếu Trajgn thái") Integer available) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.createdate = createdate;
+		this.available = available;
+	}
+
+	@Override
+	public String toString() {
+		return "ProductDTO [id=" + id + ", name=" + name + ", price=" + price + ", available=" + available
+				+ ", quantity=" + quantity + "]";
+	}
 
 }

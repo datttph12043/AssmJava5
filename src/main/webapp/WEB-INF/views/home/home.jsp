@@ -50,7 +50,7 @@
 							<td>${product.categorie.name }</td>
 
 							<td><a class="btn btn-primary"
-								href="${ pageContext.request.contextPath }/home/${ product.id }">Add to Card</a>
+								href="${ pageContext.request.contextPath }/home/addToCard/${ product.id }">Add to Card</a>
 							</td>
 						</tr>
 					</c:forEach>
