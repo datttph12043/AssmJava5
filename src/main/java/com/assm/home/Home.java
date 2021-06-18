@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.assm.dto.ProductDTO;
 import com.assm.entity.Product;
 import com.assm.repository.ProductRepositories;
 import com.assm.service.CartService;
@@ -42,6 +43,14 @@ public class Home {
 		List<Product> listProduct = loadProductToSale();
 		model.addAttribute("listProduct", listProduct);
 		return "/WEB-INF/views/home/home.jsp";
+	}
+	
+	
+	@GetMapping(value="/showCart")
+	public String showCart(Model model) throws Exception {
+		List<ProductDTO> listProduct = cartService.getListProductFromCart();
+		model.addAttribute("listProduct", listProduct);
+		return "/WEB-INF/views/home/cart.jsp";
 	}
 	
 	

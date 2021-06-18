@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<title>Insert title here</title>
+<title>Cart information</title>
 <link rel="stylesheet"
 	href="${ pageContext.request.contextPath }/css/bootstrap.min.css"></link>
 </head>
@@ -32,10 +32,10 @@
 						<td>Id</td>
 						<td>Tên SP</td>
 						<td>Giá</td>
-						<td>Số lượng</td>
+						<td>Số lượng còn trong kho</td>
+						<td>Số lượng yêu cầu</td>
 						<td>Ảnh</td>
 						<td>Loại SP</td>
-						<td>Thao tác</td>
 					</tr>
 				</thead>
 
@@ -46,12 +46,9 @@
 							<td>${product.name }</td>
 							<td>${product.price }</td>
 							<td>${product.available }</td>
+							<td>${product.quantity }</td>
 							<td>${product.image }</td>
 							<td>${product.categorie.name }</td>
-
-							<td><a class="btn btn-primary"
-								href="${ pageContext.request.contextPath }/home/addToCard/${ product.id }">Add to Card</a>
-							</td>
 						</tr>
 					</c:forEach>
 				</tbody>

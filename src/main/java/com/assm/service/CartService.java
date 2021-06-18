@@ -72,4 +72,9 @@ public class CartService {
 		System.out.println(lstProd.toString());
 	}
 	
+	
+	public List<ProductDTO> getListProductFromCart() {
+		return cartSession.getLstProduct();
+	}
+	
 }
